@@ -32,7 +32,7 @@ double kappa(){
 }	
 
 double alpha(){
-	return randomDouble(0.05, 0.5);
+	return randomDouble(0.01, 0.5);
 }
 	
 double eta(){
