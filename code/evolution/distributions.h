@@ -5,8 +5,8 @@
 // CONSTANTS
 // default species parameters
 const double initialDensity = 1e-10;
-const double defaultBeta = 0.5;
 const double defaultKappa = 1;
+const double defaultBeta = 0.75;
 
 // default threshold
 const double epsilon = 1e-14;
