@@ -216,13 +216,13 @@ using namespace std;
 					link = addLink(S, P, resource2, index);
 				}
 
-// if 2-link			// avoiding omnivory
-/*				if (S[resource2].level != S[resource1].level) {
+				// avoiding omnivory
+				if (!omnivorous && S[resource2].level != S[resource1].level) {
 					S[resource2].consumers[index] = 0;
 					P[resource2].consumers[index] = 0;
 					S[index].resources[resource2] = 0;
 				}
-*/			}
+			}
 				
 			// printing Species parameters
 			//S[index].printParameters(index);

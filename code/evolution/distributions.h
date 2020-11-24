@@ -13,6 +13,7 @@ const double epsilon = 1e-14;
 
 // lower limit on species richness before allowing species with two resources
 const int nMin = 2;
+const bool omnivorous = false;
 
 
 //DISTRIBUTIONS
