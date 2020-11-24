@@ -18,14 +18,14 @@ N in species.h determines the total number of species allowed in the food web.
 # Describing configurations
 Files that must be modified before compiling:
 
-__1, main.cpp__
-- rename 5 folders: 1-link/2-link/omni
+__1__, main.cpp
+*# rename 5 folders: 1-link/2-link/omni
 
-_2, evolution/distribution.h_
+__2__, evolution/distribution.h
 - set omnivorous true/false
 
-3, evolution/distribution.cpp
+__3__, evolution/distribution.cpp
 - change return of addSecondResource()
 
-4, evolution/time_series.cpp
+__4__, evolution/time_series.cpp
   - save time series?
