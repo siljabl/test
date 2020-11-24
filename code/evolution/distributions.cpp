@@ -36,7 +36,7 @@ double alpha(){
 }
 	
 double eta(){
-	return randomDouble(0.05, 1);
+	return randomDouble(0.01, 1);
 }
 
 double beta(){
