@@ -52,7 +52,7 @@ bool type(){
 // LINKS
 bool addSecondResource(){
 		return false;		// 1-link
-//		return ratio(2,3);	// 2-link
+//		return ratio(3,4);	// 2-link
 //		return ratio(1,2);	// omni
 }
 
