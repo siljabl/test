@@ -36,6 +36,7 @@ public:
 };
 
 
+
 class Producer : public Species
 {
 public:
@@ -56,6 +57,7 @@ public:
 	void printParameters(int index);
 	// printing all parameters
 };
+
 
 
 class FoodWeb
