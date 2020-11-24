@@ -13,9 +13,6 @@
 	bool addLink(Species S[], Producer P[], int resource, int consumer);
 	// creating link between resource and consumer
 
-	//void removeLink(Species S[], Producer P[], int resource, int consumer);
-	// removing link between resource and consumer
-
 	void removeLinks(Species S[], Producer P[], int index);
 	// removing all links of a species
 
@@ -33,9 +30,6 @@
 
 	void removeSpecies(Species s[], Producer p[], int index);
 	// removing species with index from foodweb
-
-	// void reinitializing(Species S[], Species S_copy[], Producer P[], Producer P_copy[]);
-	// reinitilazing species arrays to food web before invasion
 
 
 
