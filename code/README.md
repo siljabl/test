@@ -19,7 +19,7 @@ N in species.h determines the total number of species allowed in the food web.
 Files that must be modified before compiling:
 
 __1__, main.cpp
-*# rename 5 folders: 1-link/2-link/omni
+* rename 5 folders: 1-link/2-link/omni
 
 __2__, evolution/distribution.h
 - set omnivorous true/false
