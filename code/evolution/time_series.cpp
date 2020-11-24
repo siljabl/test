@@ -354,7 +354,7 @@ bool converged(Species S[], Producer P[], double steadyStates[], ofstream& webDa
 	}
 
 	// feasible, linearly stable food webs that take long to stabilize
-	else if (FoodWeb::feasible && FoodWeb::stable && t >= 1e4 && t < 5e4) {
+	else if (FoodWeb::feasible && FoodWeb::stable && t >= 1e4 && t < 1e5) {
 		
 		// counting Species with steady density
 		for (int i = 0; i < Species::nTotal; i++) {
@@ -376,7 +376,7 @@ bool converged(Species S[], Producer P[], double steadyStates[], ofstream& webDa
 	}
 
 	// feasible, linearly stable food webs that take very long to stabilize
-	else if (FoodWeb::feasible && FoodWeb::stable && t >= 5e4) { 
+	else if (FoodWeb::feasible && FoodWeb::stable && t >= 1e5) { 
 		if (decreasing(S, P, steadyStates)) {
 			// saving behavior of food web
 			FoodWeb::prevIteration = 2;
@@ -420,10 +420,9 @@ bool converged(Species S[], Producer P[], double steadyStates[], ofstream& webDa
 	}
 
 
-// remove if 1-link?
 	// LINEARLY UNSTABLE
 	// Considered unconverged if no extinctions before t = 5e4
-	else if (FoodWeb::feasible && !FoodWeb::stable && t >= 5e4) {
+	else if (FoodWeb::feasible && !FoodWeb::stable && t >= 1e5) {
 		FoodWeb::prevIteration = 9;
 		webData << 9 << endl;
 		return true;
@@ -578,7 +577,7 @@ void timeSeries(Species S[], Producer P[], double steadyStates[], ofstream& stab
 	double dt = 0.01;
 
 	// number of Species when invasion starts
-	int N_Species = Species::nTotal;
+	int nInitial = Species::nTotal;
 
 	// saving behavior of food web
 	webData << iter << " " << Species::nTotal << " " << FoodWeb::feasible << " " << FoodWeb::stable<< " ";
@@ -603,7 +602,7 @@ void timeSeries(Species S[], Producer P[], double steadyStates[], ofstream& stab
 
 			// food web is integrated for some time before considered as damped oscillatiry if no other Species go extinct
 			// if food web damped oscillatory before invasion and invasive species is extinct
-			if (FoodWeb::prevIteration == 2 && FoodWeb::prevExtinct == iter && Species::nTotal == N_Species - 1) {	
+			if (FoodWeb::prevIteration == 2 && FoodWeb::prevExtinct == iter && Species::nTotal == nInitial - 1) {	
 				bool secondExtinctionEvent = 0;
 				while (t < 1e4 && !secondExtinctionEvent) {
 					t += dt;
@@ -611,9 +610,9 @@ void timeSeries(Species S[], Producer P[], double steadyStates[], ofstream& stab
 					if (dt < 0.01) { dt = 0.01; }
 					RK4(S, P, dt);
 
-					secondExtinctionEvent = checkForExtinction(S, P, steadyStates, stab_file, unstab_file, webData, iter);
-				
+					secondExtinctionEvent = checkForExtinction(S, P, steadyStates, stab_file, unstab_file, webData, iter);				
 				}
+
 				if (!secondExtinctionEvent) {
 					webData << FoodWeb::prevIteration << endl;	
 					setDensitiesSteady(steadyStates, S, P);
