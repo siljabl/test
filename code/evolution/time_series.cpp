@@ -319,6 +319,10 @@ bool checkForExtinction(Species S[], Producer P[], double steadyStates[], ofstre
 		webData << addAttempt << " " << Species::nTotal << " " << FoodWeb::feasible << " " << FoodWeb::stable << " ";
 		
 		return true;
+
+		for (int i=0; i<nMAX; i++) {
+			S[i].printParameters(i);
+		}
 	}
 
 	// else nothing
