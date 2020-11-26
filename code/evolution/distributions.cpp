@@ -32,7 +32,7 @@ double kappa(){
 }	
 
 double alpha(){
-	return randomDouble(0.01, 0.5);
+	return randomDouble(0.05, 0.5);
 }
 	
 double eta(){
@@ -51,9 +51,9 @@ bool type(){
 
 // LINKS
 bool addSecondResource(){
-//		return false;		// 1-link
+		return false;		// 1-link
 //		return ratio(3,4);	// 2-link
-		return ratio(1,2);	// omni
+//		return ratio(1,2);	// omni
 }
 
 
