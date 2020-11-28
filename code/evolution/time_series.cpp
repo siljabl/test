@@ -600,31 +600,6 @@ void timeSeries(Species S[], Producer P[], double steadyStates[], ofstream& stab
 			tTot += t;
 			t = 0;
 
-// temporary
-			if (iter == 8567 && Species::nTotal == 2) {
-				double dt = 0.01;
-				t = 0;
-				//ofstream timefile("/conv1/zfg663/foodwebs/data/timeseries_" + std::to_string(iter) + ".txt");
-				ofstream timefile("/conv1/zfg663/foodwebs/data/timeseries_8567.txt");
-				while (t <= 3e4)
-				{
-					// time evolution
-					dt = RKF45(S, P, dt);
-					if (dt < 0.01) { dt = 0.01; }
-					RK4(S, P, dt);
-
-					timefile << t;
-					for (int i = 0; i < nMAX; i++)
-					{
-						timefile << " " << S[i].density;
-					}
-					timefile << endl;
-
-					t += dt;
-				}
-				timefile.close();
-			}		
-
 			// food web is integrated for some time before considered as damped oscillatiry if no other Species go extinct
 			// if food web damped oscillatory before invasion and invasive species is extinct
 			if (FoodWeb::prevIteration == 2 && FoodWeb::prevExtinct == iter && Species::nTotal == nInitial - 1) {	

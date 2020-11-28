@@ -28,19 +28,19 @@ int main() {
 
 //	FILES
 	// data is saved as: iteration - number of species - real - imaginary
-	ofstream stabEigen("/conv1/zfg663/foodwebs/data/beta1/1-link/eig_stab.txt");		// eigenvalues of linearly stable food web
-	ofstream ustabEigen("/conv1/zfg663/foodwebs/data/beta1/1-link/eig_unstab.txt");		// eigenvalues of linearly unstable food web
+	ofstream stabEigen("/conv1/zfg663/foodwebs/data/beta1/omni/eig_stab.txt");		// eigenvalues of linearly stable food web
+	ofstream ustabEigen("/conv1/zfg663/foodwebs/data/beta1/omni/eig_unstab.txt");		// eigenvalues of linearly unstable food web
 
 	// data is saved as:
 	// iteration - number of Species - feasibility - stability - convergence
 	// 1 - converged, 2 - decreasing amplitude, 9 - not converged
-	ofstream webData("/conv1/zfg663/foodwebs/data/beta1/1-link/stab_data.txt");				// behavior of food web
+	ofstream webData("/conv1/zfg663/foodwebs/data/beta1/omni/stab_data.txt");				// behavior of food web
 
 	// data is saved as:
 	// iteration - l - S(0) - k - a - consumer - eta
 	// iteration - l - S(0) - a - consumer/resource - eta - beta*eta	
-	ofstream sFile("/conv1/zfg663/foodwebs/data/beta1/1-link/species_param.txt");			// Species parameters
-	ofstream pFile("/conv1/zfg663/foodwebs/data/beta1/1-link/producer_param.txt");			// Producer parameters
+	ofstream sFile("/conv1/zfg663/foodwebs/data/beta1/omni/species_param.txt");			// Species parameters
+	ofstream pFile("/conv1/zfg663/foodwebs/data/beta1/omni/producer_param.txt");			// Producer parameters
 	
 
 //	DECLARING ARRAYS
@@ -80,7 +80,6 @@ int main() {
 		// running time series
 		checkFeasibility(S, P, steadyStates, stabEigen, ustabEigen, addAttempt);
 		timeSeries(S, P, steadyStates, stabEigen, ustabEigen, webData, addAttempt);
-		updateTrophicLevel(S);
 
 		if (Species::nTotal == 0) {
 			Producer s(addAttempt);
@@ -92,7 +91,7 @@ int main() {
 			timeSeries(S, P, steadyStates, stabEigen, ustabEigen, webData, 0);
 			saveParameters(S, P, sFile, pFile, 0);
 		}
-	
+		updateTrophicLevel(S);
 	}
 	
 	// closing all files
