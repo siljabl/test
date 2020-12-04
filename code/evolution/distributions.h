@@ -6,14 +6,14 @@
 // default species parameters
 const double initialDensity = 1e-10;
 const double defaultKappa = 1;
-const double defaultBeta = 0.75;
+const double defaultBeta = 0.5;
 
 // default threshold
 const double epsilon = 1e-14;
 
 // lower limit on species richness before allowing species with two resources
 const int nMin = 2;
-const bool omnivorous = true;
+const bool omnivorous = false;
 
 
 //DISTRIBUTIONS
