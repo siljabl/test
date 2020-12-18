@@ -1,5 +1,4 @@
 // Script to compute eigenvalues of random matrices
-// 23/5-2020: Used random seed 27 to run simulations for N = 2-12
 
 #include "/conv1/zfg663/foodwebs/code/evolution/distributions.cpp"
 #include <iostream>
@@ -24,7 +23,6 @@ int main() {
 srand(27);
 
 // setting parameters, etc.
-double prob = 0.5;		// occupation probability
 int mu = 0;			// mean of gaussian
 int sig = 1;			// std of gaussian
 int Nrep = 1e4;			// number of community matrices in spectrum
@@ -35,6 +33,9 @@ int N = 2;
 cout << "Enter size of community matrix: ";
 cin >> N;
 
+// occupation probability, propotional to species richness
+double prob = ((double)5/(4*N));		// occupation probability
+cout << "Occupation probability: " << prob << endl;
 ofstream file("/conv1/zfg663/foodwebs/data/spectra/May_N" + to_string(N) + ".txt");
 
 
