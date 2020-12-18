@@ -28,19 +28,19 @@ int main() {
 
 //	FILES
 	// data is saved as: iteration - number of species - real - imaginary
-	ofstream stabEigen("/conv1/zfg663/foodwebs/data/beta0.75/omni/eig_stab.txt");		// eigenvalues of linearly stable food web
-	ofstream ustabEigen("/conv1/zfg663/foodwebs/data/beta0.75/omni/eig_unstab.txt");		// eigenvalues of linearly unstable food web
+	ofstream stabEigen("/conv1/zfg663/foodwebs/data/beta0.1/2-link/eig_stab.txt");		// eigenvalues of linearly stable food web
+	ofstream ustabEigen("/conv1/zfg663/foodwebs/data/beta0.1/2-link/eig_unstab.txt");		// eigenvalues of linearly unstable food web
 
 	// data is saved as:
 	// iteration - number of Species - feasibility - stability - convergence
 	// 1 - converged, 2 - decreasing amplitude, 9 - not converged
-	ofstream webData("/conv1/zfg663/foodwebs/data/beta0.75/omni/stab_data.txt");				// behavior of food web
+	ofstream webData("/conv1/zfg663/foodwebs/data/beta0.1/2-link/stab_data.txt");				// behavior of food web
 
 	// data is saved as:
 	// iteration - l - S(0) - k - a - consumer - eta
 	// iteration - l - S(0) - a - consumer/resource - eta - beta*eta	
-	ofstream sFile("/conv1/zfg663/foodwebs/data/beta0.75/omni/species_param.txt");			// Species parameters
-	ofstream pFile("/conv1/zfg663/foodwebs/data/beta0.75/omni/producer_param.txt");			// Producer parameters
+	ofstream sFile("/conv1/zfg663/foodwebs/data/beta0.1/2-link/species_param.txt");			// Species parameters
+	ofstream pFile("/conv1/zfg663/foodwebs/data/beta0.1/2-link/producer_param.txt");			// Producer parameters
 	
 
 //	DECLARING ARRAYS
