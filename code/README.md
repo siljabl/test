@@ -24,7 +24,7 @@ __1__, main.cpp
 __2__, evolution/distributions.h
 - set omnivorous true/false
 
-__3__, evolution/distribution.cpp
+__3__, evolution/distributions.cpp
 - change return of addSecondResource()
 
 __4__, evolution/time_series.cpp
