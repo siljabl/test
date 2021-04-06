@@ -21,7 +21,7 @@ Files that must be modified before compiling:
 __1__, main.cpp
 * rename 5 folders: 1-link/2-link/omni
 
-__2__, evolution/distribution.h
+__2__, evolution/distributions.h
 - set omnivorous true/false
 
 __3__, evolution/distribution.cpp
